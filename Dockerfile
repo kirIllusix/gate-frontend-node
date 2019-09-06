@@ -27,6 +27,7 @@ RUN apt-get update \
 RUN apt-get -yqq update && \
     apt-get -yqq install xvfb tinywm && \
     apt-get -yqq install fonts-ipafont-gothic xfonts-100dpi xfonts-75dpi xfonts-scalable xfonts-cyrillic && \
+    apt-get -fyqq install fonts-liberation libappindicator3-1 libatk-bridge2.0-0 libatspi2.0-0 libgtk-3-0 libxss1 xdg-utils libdbusmenu-glib4 libindicator3-7 libgtk-3-common libcairo-gobject2 libcolord1 libwayland-client0 libwayland-cursor0 libxkbcommon0 libdbusmenu-gtk3-4 dconf-gsettings-backend dconf-service libdconf1 && \
     apt-get -yqq install python && \
     rm -rf /var/lib/apt/lists/*
 
