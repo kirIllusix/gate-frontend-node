@@ -61,11 +61,11 @@ WORKDIR /var/www
 #Chrome browser to run the tests
 ARG CHROME_VERSION=75.0.3770.80
 RUN curl https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add \
-      && wget https://www.slimjet.com/chrome/download-chrome.php?file=lnx%2Fchrome64_$CHROME_VERSION.deb \
-      && dpkg -i download-chrome*.deb || true
+		&& wget https://www.slimjet.com/chrome/download-chrome.php?file=files%2F$CHROME_VERSION%2Fgoogle-chrome-stable_current_amd64.deb \
+		&& dpkg -i download-chrome*.deb || true
 
 RUN apt-get install -y -f \
-      && rm -rf /var/lib/apt/lists/*
+		&& rm -rf /var/lib/apt/lists/*
 
 #Disable the SUID sandbox so that chrome can launch without being in a privileged container
 RUN dpkg-divert --add --rename --divert /opt/google/chrome/google-chrome.real /opt/google/chrome/google-chrome \
