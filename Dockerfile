@@ -61,7 +61,7 @@ WORKDIR /var/www
 
 #Chrome browser to run the tests
 ARG CHROME_VERSION=75.0.3770.80
-RUN curl https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add
+RUN curl https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add || true
 RUN wget https://www.slimjet.com/chrome/download-chrome.php?file=files%2F$CHROME_VERSION%2Fgoogle-chrome-stable_current_amd64.deb \
 		&& dpkg -i download-chrome*.deb
 
